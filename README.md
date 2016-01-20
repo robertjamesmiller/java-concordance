@@ -54,8 +54,12 @@ occurrences, and list of sentence numbers.)
     number       {2:0,2}              zero-indexed {1:2}
     occurs       {1:2}   
     
-## Install from project root: mvn install
+## Install from project root: 
 
-### Run from project root: mvn exec:java -Dexec.mainClass="com.dropclip.concordance.App"
+    mvn install
+
+### Run from project root: 
+
+    mvn exec:java -Dexec.mainClass="com.dropclip.concordance.App"
 
 Please end all paragraphs or text documents with a '~'.
