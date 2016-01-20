@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/robertjamesmiller/java-concordance.svg?branch=master)](https://travis-ci.org/robertjamesmiller/java-concordance)
+
 # a Java concordance programming exercise
 
 A "concordance" is an alphabetical list of the words present in a text with a count of how
