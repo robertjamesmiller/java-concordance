@@ -67,7 +67,31 @@ public class ConcordanceParserTest {
 		assertEquals("this {1:0}", results.get(1));
 		assertEquals("today {1:0}", results.get(2));
 		assertEquals("u.s.a. {1:0}", results.get(3));
-
+	}
+	
+	@Test
+	public void getAlphabeticalListOfResultsShouldReturnThreeWordsWithoutTheLastPeriodInUSA() {
+		String paragraph = "This is U.S.A";
+	    ConcordanceParser cp = new ConcordanceParser(paragraph);
+		
+		List<String> results = cp.getAlphabeticalListOfResults();
+		assertEquals(3, results.size());
+		assertEquals("is {1:0}", results.get(0));
+		assertEquals("this {1:0}", results.get(1));
+		assertEquals("u.s.a {1:0}", results.get(2));
+	}
+	
+	@Test
+	public void getAlphabeticalListOfResultsShouldReturnThreeWordsWithoutTheLastPeriodInEG() {
+		String paragraph = "This is e.g.,";
+	    ConcordanceParser cp = new ConcordanceParser(paragraph);
+		
+		List<String> results = cp.getAlphabeticalListOfResults();
+		assertEquals(3, results.size());
+		assertEquals("e.g {1:0}", results.get(0));
+		assertEquals("is {1:0}", results.get(1));
+		assertEquals("this {1:0}", results.get(2));
+		
 	}
 	
 	@Test

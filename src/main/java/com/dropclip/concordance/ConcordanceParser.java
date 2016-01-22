@@ -40,9 +40,9 @@ public class ConcordanceParser {
 		    	// lowercase all words
 		        String word = sentence.substring(start,end).toLowerCase();
 		        // BreakIterator is not working for e.g., and U.S.A. 
-		        if (word.equals("e.g") && sentence.substring(start,end+2).equals("e.g.,")){
+		        if (word.equals("e.g") && sentence.length() >= end+2 && sentence.substring(start,end+2).equals("e.g.,")){
 		        	word = "e.g.";
-		        } else if (word.equals("u.s.a") && sentence.substring(start,end+1).toLowerCase().equals("u.s.a.")){
+		        } else if (word.equals("u.s.a") && sentence.length() >= end+1 && sentence.substring(start,end+1).toLowerCase().equals("u.s.a.")){
 		        	word = "u.s.a.";
 		        } 
 		        if (Character.isLetterOrDigit(word.charAt(0))) {
