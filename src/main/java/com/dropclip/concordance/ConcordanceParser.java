@@ -7,12 +7,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
 
 public class ConcordanceParser {
-	private static final Pattern WORD_PATTERN = Pattern.compile("(\\w+\\.\\w+\\.|\\w+\\.\\w+)|\\w+-\\w+|\\w+");
 	private String paragraph;
 
 	public ConcordanceParser(String paragraph) {
