@@ -39,8 +39,7 @@ public class ConcordanceParser {
 		    while (end != BreakIterator.DONE) {
 		    	// lowercase all words
 		        String word = sentence.substring(start,end).toLowerCase();
-		        // BreakIterator is not working for e.g., and U.S.A. so check if word
-		        // has a period and, if so, check to see
+		        // BreakIterator is not working for e.g., and U.S.A. 
 		        if (word.equals("e.g") && sentence.substring(start,end+2).equals("e.g.,")){
 		        	word = "e.g.";
 		        } else if (word.equals("u.s.a") && sentence.substring(start,end+1).toLowerCase().equals("u.s.a.")){
