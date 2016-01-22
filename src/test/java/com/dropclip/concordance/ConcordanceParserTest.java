@@ -57,16 +57,36 @@ public class ConcordanceParserTest {
 	}
 	
 	@Test
-	public void getAlphabeticalListOfResultsShouldReturnThreeWordsWithOneHavingPeriods() {
-		String paragraph = "This is e.g..";
+	public void getAlphabeticalListOfResultsShouldReturnFourWordsWithOneHavingThreePeriods() {
+		String paragraph = "This is U.S.A. today.";
 	    ConcordanceParser cp = new ConcordanceParser(paragraph);
 		
 		List<String> results = cp.getAlphabeticalListOfResults();
-		assertEquals(3, results.size());
-		assertEquals("e.g. {1:0}", results.get(0));
-		assertEquals("is {1:0}", results.get(1));
-		assertEquals("this {1:0}", results.get(2));
+		assertEquals(4, results.size());
+		assertEquals("is {1:0}", results.get(0));
+		assertEquals("this {1:0}", results.get(1));
+		assertEquals("today {1:0}", results.get(2));
+		assertEquals("u.s.a. {1:0}", results.get(3));
 
+	}
+	
+	@Test
+	public void getAlphabeticalListOfResultsShouldReturnTenWordsWithOneBeingEG() {
+		String paragraph = "BreakIterator is better and less complicated than regex (e.g., patterns).";
+	    ConcordanceParser cp = new ConcordanceParser(paragraph);
+		
+		List<String> results = cp.getAlphabeticalListOfResults();
+		assertEquals(10, results.size());
+		assertEquals("and {1:0}", results.get(0));
+		assertEquals("better {1:0}", results.get(1));
+		assertEquals("breakiterator {1:0}", results.get(2));
+		assertEquals("complicated {1:0}", results.get(3));
+		assertEquals("e.g. {1:0}", results.get(4));
+		assertEquals("is {1:0}", results.get(5));
+		assertEquals("less {1:0}", results.get(6));
+		assertEquals("patterns {1:0}", results.get(7));
+		assertEquals("regex {1:0}", results.get(8));
+		assertEquals("than {1:0}", results.get(9));
 	}
 	
 	@Test

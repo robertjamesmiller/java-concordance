@@ -34,12 +34,12 @@ public class SentenceParserTest {
 	
 	@Test
 	public void getSentencesShouldReturnOneSentenceThatIncludesAnAcronym() {
-		String paragraph = "This sentence has the U.S.A acronym in it.";
+		String paragraph = "This sentence has the U.S.A. acronym in it.";
 		SentenceParser sp = new SentenceParser(paragraph);
 		List<String> sentences = sp.getSentences();
 		
 		assertEquals(1, sentences.size());
-		assertEquals("This sentence has the U.S.A acronym in it.", sentences.get(0));
+		assertEquals("This sentence has the U.S.A. acronym in it.", sentences.get(0));
 	}
 	
 	@Test
